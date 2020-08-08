@@ -3,14 +3,13 @@ $accent: white;
 $light: #eaeaea;
 $main: #08d9d6;
 
-$maxmid: 200px;
-
 .card{
     box-sizing: border-box;
     background: linear-gradient(#3dadbb, #489eb5);
     border-radius: 1rem;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 1.5em;
+    color: $accent;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(3, auto);
@@ -22,7 +21,6 @@ $maxmid: 200px;
 
     .city{
         grid-area: city;
-        color: $accent;
         
         span{    
             text-align: left;
@@ -34,8 +32,6 @@ $maxmid: 200px;
 
     .date{
         grid-area: date;
-        color: $accent;
-        max-height: $maxmid;
         align-items: flex-start;
 
         *{
@@ -49,7 +45,6 @@ $maxmid: 200px;
 
     .temp{
         grid-area: temperature;
-        color: $accent;
     
         .big{
             font-size: 2em;
@@ -61,13 +56,12 @@ $maxmid: 200px;
         grid-area: icon;
 
         img{
-            min-width: 150px;
+            min-width: 140px;
         }
     }
 
     .temp_min_max{
         grid-area: min_max;
-        color:$accent;
     
         i{
             box-sizing: border-box;
@@ -81,12 +75,51 @@ $maxmid: 200px;
 
     .description{
         grid-area: description;
-        color: $accent;
         text-align: center;
     
         span{
             font-size: 1.618em;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .card{
+        width: 100%;
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "city city"
+            "icon icon"
+            "min_max min_max"
+            "date temperature"
+            "description description"
+        ;
+    }
+
+    .city{
+        display: flex;
+        justify-content: center;
+    }
+
+    .date, .temp{
+        padding: 1rem;
+    }
+
+    .icon{
+        grid-area: icon;
+
+        img{
+            width: 200px;
+        }
+    }
+
+    .temp_min_max{
+        i{
+            padding: 0 0.3rem;
         }
     }
 }

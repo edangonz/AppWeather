@@ -6,24 +6,36 @@ $main: #08d9d6;
 .card{
     text-align: center;
     box-sizing: border-box;
-    padding: 0.3em;
+    padding: 0.8rem 0.3rem;
+    color: $accent;
 }
 
 .day{
     span{
         font-weight: bold;
         text-transform: uppercase;
-        color: $accent;
     }
 }
 
 .description{
+    width: 100px;
+    height: 40px;
+    
     span{
         text-transform: uppercase;
-        color: $accent;
     }
 }
 
 .low-temp, .high-temp{
-    color: $accent;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) { 
+    .card{
+        width: 27vw;
+    }
+
+    .description{
+        width: auto;
+    }
 }
