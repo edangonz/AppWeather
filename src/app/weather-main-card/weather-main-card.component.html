@@ -1,0 +1,26 @@
+<div class="card" *ngIf="weather">
+    <div class="city">
+        <span>{{ weather.name }}</span>
+    </div>
+    <div class="date center direccion-column">
+        <span class="day">{{ returnDayWeek(weather.minMaxTemp.day) }}</span>
+        <span>{{ weather.minMaxTemp.date }}/{{ returnMonth(weather.minMaxTemp.month + 1)}}/{{ weather.minMaxTemp.year }}</span>
+        <span>Wind {{ weather.moreData.wind }} km/h</span>
+    </div>
+
+    <div class="temp_min_max center">
+        <i class="fas fa-angle-down"></i><span>{{ weather.minMaxTemp.min }}°</span>
+        <i class="fas fa-angle-up"></i><span>{{ weather.minMaxTemp.max }}°</span>
+    </div>
+
+    <div class="icon center">
+        <img [src]="'../../assets/svg-weather/'+weather.icon+'.svg'">
+    </div>
+    <div class="temp center direccion-column" *ngIf="weather.temp">
+        <span>Temperature</span>
+        <span class="big">{{ weather.temp }}°</span>
+    </div>
+    <div class="description">
+        <span>{{ weather.description }}</span>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+$dark: #252a34;
+$accent: white;
+$light: #eaeaea;
+$main: #08d9d6;
+
+.card{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.3em;
+}
+
+.day{
+    span{
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $accent;
+    }
+}
+
+.description{
+    span{
+        text-transform: uppercase;
+        color: $accent;
+    }
+}
+
+.low-temp, .high-temp{
+    color: $accent;
+}

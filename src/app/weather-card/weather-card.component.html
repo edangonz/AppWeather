@@ -1,0 +1,21 @@
+<div class="card direccion-column" *ngIf="weather">
+    <div class="day">
+        <span>{{ returnDayWeek(weather.minMaxTemp.day) }}</span>
+    </div>
+
+    <div class="icon center">
+        <img [src]="'../../assets/svg-weather/'+weather.icon+'.svg'">
+    </div>
+    
+    <div class="low-temp" *ngIf="weather.minMaxTemp">
+        <i class="fas fa-angle-down"></i><span>{{ weather.minMaxTemp.min }}°</span>
+    </div>
+
+    <div class="high-temp" *ngIf="weather.minMaxTemp">
+        <i class="fas fa-angle-up"></i><span>{{ weather.minMaxTemp.max }}°</span>
+    </div>
+
+    <div class="description">
+        <span>{{ weather.description }}</span>
+    </div>
+</div>

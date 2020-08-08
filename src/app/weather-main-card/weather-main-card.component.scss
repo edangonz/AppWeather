@@ -1,0 +1,92 @@
+$dark: #252a34;
+$accent: white;
+$light: #eaeaea;
+$main: #08d9d6;
+
+$maxmid: 200px;
+
+.card{
+    box-sizing: border-box;
+    background: linear-gradient(#3dadbb, #489eb5);
+    border-radius: 1rem;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "city city min_max min_max"
+        "date icon icon temperature"
+        "description description description description"
+    ;
+
+    .city{
+        grid-area: city;
+        color: $accent;
+        
+        span{    
+            text-align: left;
+            font-size: 1.618em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .date{
+        grid-area: date;
+        color: $accent;
+        max-height: $maxmid;
+        align-items: flex-start;
+
+        *{
+            padding: 0.5rem 0;
+        }
+        
+        .day{
+            text-transform: uppercase;
+        }
+    }
+
+    .temp{
+        grid-area: temperature;
+        color: $accent;
+    
+        .big{
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+
+    .icon{
+        grid-area: icon;
+
+        img{
+            min-width: 150px;
+        }
+    }
+
+    .temp_min_max{
+        grid-area: min_max;
+        color:$accent;
+    
+        i{
+            box-sizing: border-box;
+            padding: 0 1rem;
+        }
+    
+        span{
+            font-weight: 700;
+        }
+    }
+
+    .description{
+        grid-area: description;
+        color: $accent;
+        text-align: center;
+    
+        span{
+            font-size: 1.618em;
+            text-transform: uppercase;
+        }
+    }
+}
